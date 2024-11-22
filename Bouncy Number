@@ -1,0 +1,42 @@
+//A "bouncy number" is a positive integer that is neither considered "increasing" nor "decreasing" when examining its digits from left to right
+//Example of a bouncy number: 1532 - the sequence starts increasing (1, 5), then decreases (3, 2).
+import java.util.*;
+class bouncy_no
+{
+    static void main()
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter a number:");
+        String s=sc.nextLine();
+        int i,l=s.length();
+        for(i=0;i<l;i++)
+        {
+            if(Character.isDigit(s.charAt(i))==false)
+            {
+                System.out.println("Invalid input");
+                return;
+            }
+        }
+        int inc=0,dec=0;
+        for(i=1;i<l;i++)
+        {
+            char a=s.charAt(i-1);
+            char b=s.charAt(i);
+            if(b>a)
+                inc++;
+            else if(a>b)
+                dec++;
+            else
+            {
+                inc++;
+                dec++;
+            }
+        }
+        if(inc==s.length()-1)
+            System.out.println(s+" is an Increasing number");
+        else if(dec==s.length()-1)
+            System.out.println(s+" is a Decreasing number"); 
+        else
+            System.out.println(s+" is a Bouncy number"); 
+    }
+}
