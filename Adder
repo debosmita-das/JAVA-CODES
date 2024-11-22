@@ -3,7 +3,7 @@ public class Adder
 {//open class
     int a[]=new int[2];
     Scanner sc=new Scanner( System.in);
-    Adder()
+    public Adder()
     {//constructor to assign 0 to the array elements 
     a[0]=0;
         a[1]=0;
@@ -32,7 +32,7 @@ public class Adder
     System.out.println("Their sum is -");
         System.out.println(a[0]+ " hours "  + a[ 1]+" minutes"+ "  (where 60 minutes = 1 hour)");
     }
-    public static void main()
+    public static void main(String[] args)
     {//open main    
         Adder ob1=new Adder(); //creating first object
         Adder ob2=new Adder(); //creating second object
