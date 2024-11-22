@@ -1,0 +1,45 @@
+import java. util.Scanner;
+public class Adder
+{//open class
+    int a[]=new int[2];
+    Scanner sc=new Scanner( System.in);
+    Adder()
+    {//constructor to assign 0 to the array elements 
+    a[0]=0;
+        a[1]=0;
+    }
+    void readtime()
+    {//for entering the elements of the array 
+    System.out.println("Enter hours and minutes");
+        a[0]=sc.nextInt();
+        a[1]=sc.nextInt();
+        System.out.println(a[0]+" hours "+a[1]+" minutes");
+    }
+    void addtime(Adder X,Adder Y)
+    {//adds the time of the two parameterized objects X and Y and stores the sum in the current calling object 
+    /* adds minutes */
+        a[1]=X.a[1] + Y.a[1];
+        /*if minutes is greater than 60 than add hours(a[1]/60) to a[0] position*/ 
+        if(a[1]>=60)
+        {
+            a[0]=a[1]/60;
+            a[1]=a[1]%60;
+        }
+        a[0]+= X.a[0] + Y.a[0];
+    }
+    void disptime()
+    {//displays the array elements 
+    System.out.println("Their sum is -");
+        System.out.println(a[0]+ " hours "  + a[ 1]+" minutes"+ "  (where 60 minutes = 1 hour)");
+    }
+    public static void main()
+    {//open main    
+        Adder ob1=new Adder(); //creating first object
+        Adder ob2=new Adder(); //creating second object
+        Adder ob3=new Adder(); //creating third object
+        ob1.readtime();
+        ob2.readtime() ;
+        ob3.addtime(ob1,ob2);
+        ob3.disptime();
+    }//close main
+}//close class 
