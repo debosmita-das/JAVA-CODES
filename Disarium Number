@@ -1,0 +1,41 @@
+//A number where the sum of its digits, each raised to the power of its position, equals the number itself.
+//For example, 175 is a Disarium number as follows. 1^1 + 7^2 + 5^3 = 1 + 49 + 125 = 175
+import java.util.Scanner;
+class Disarium
+{//open class
+    int num; //to store the number
+    int size; //to store the size
+    Disarium(int nn)
+    {//parameterized constructor to initialize the data members n=nn and size=0 
+        num = nn;
+        size = 0;
+    }
+    void countDigit()
+    {
+       int len = (""+num).length();
+       size = len;
+    }
+    int sumofDigits(int n, int p)
+    { //function to the give sum of digits raised to the power
+        if(n==0)
+            return 0;
+        else
+            return (int)Math.pow((n%10),p) + sumofDigits((n/10), p-1);
+    }
+    void check()
+    {//checks whether the number is a disarium number and displays the result 
+        if(num == sumofDigits(num, size))
+            System.out.println(num + " is a Disarium Number");
+        else
+            System.out.println(num + " is not a Disarium Number");
+    }
+    public static void main(String args[])
+    {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter a number");
+        int n = in.nextInt();
+        Disarium obj = new Disarium(n);//creating object
+        obj.countDigit();
+        obj.check();
+    }
+}//close class 
