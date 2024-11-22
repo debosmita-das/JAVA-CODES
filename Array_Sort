@@ -1,11 +1,11 @@
-/* sort the boundary elements using any sorting technique & rearrange them in the matrix in clockwise manner
+/* sort the boundary elements using any sorting technique & rearrange them in the matrix in a clockwise manner
  * calculate the product of the non-boundary elements
  * display og matrix, rearranged matrix and the non-boundary elements of the rearranged matrix separately with their product
  */
 import java.util.*;
 class ArraySort
 {
-    public void main()
+    public static void main(String[] args)
     {
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter the size of the matrix");
