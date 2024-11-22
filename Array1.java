@@ -1,3 +1,4 @@
+//The program takes two arrays from the user, sums the elements at corresponding positions, and prints the result. The solution is simple but works well for small fixed-size arrays.
 import java.util.*;
 class Array1
 {//open class
